@@ -1,0 +1,45 @@
+{% extends "layout.html"%}
+{% block content%}
+<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h1 class="mb-10"> Learn <span class="text-warning"> To Code</span></h1>
+                <p class="lead my-4">
+                    We focus on teaching programming in an intuitive and easy to follow way. All you need is
+                    dedication!
+                </p>
+
+            </div>
+            <img class="img-fluid w-50 d-none d-sm-block" src="{{url_for('static', filename='showcase.svg')}}" alt="">
+        </div>
+    </div>
+</section>
+<!-- categories -->
+<section class="bg-ligh">
+    <div class="container p-5">
+        <h3 class="text-center text-secondary" id='learn'>Categories</h3>
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-sm-12 col-md-6 col-lg-4 p-3 d-flex align-items-stretch">
+                <a href="#category_name" class="text-decoration-none">
+                    <div class="card text-light">
+                        <div class="card-body text-center">
+                            <img src="{{url_for('static', filename=category.icon)}}" alt="" class="card-img w-50">
+                            <h4 class="card-title mb-4">
+                                {{category.name}}
+                            </h4>
+                            <p class="card-text">{{category.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Lessons -->
+
+
+
+{% endblock content%}

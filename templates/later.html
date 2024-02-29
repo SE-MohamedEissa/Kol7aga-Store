@@ -1,0 +1,30 @@
+<section class="bg-dark">
+    <div class="container p-5">
+        <div class="row mb-5 ">
+            <div class="col">
+                <h3 class="text-uppercase text-center text-light">latest lessons</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for lesson in lessons %}
+            <div class="col-sm-12 col-md-6 col-lg-4 pb-5 d-flex align-items-stretch">
+                <div class="card lesson">
+                    <img src="{{url_for('static', filename=lesson.thumbnail)}}" class="card-img">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">
+                            <a class="text-decoration-none text-dark" href="#">{{lesson.title}}</a>
+                        </h5>
+                        <p class="card-text mb-0">In:
+                            <a class="text-decoration-none" href="#">{{lesson.category}}</a>
+                        </p>
+                        <span><img class="article-img" src="{{url_for('static', filename='default.jpg')}}" alt="">By: <a
+                                href="#" class="link">{{lesson.author}}</a></span>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
