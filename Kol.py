@@ -2,81 +2,48 @@ from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
-lessons = [{
-    'title': 'Request Library Course',
-    'course': 'Python',
-    'author': 'Omar',
-    'thumbnail': 'thumbnail.jpg'
-},
-{'title': 'Request Library Course',
-    'course': 'Python',
-    'author': 'Omar',
-    'thumbnail': 'thumbnail.jpg'
-},
-{'title': 'Request Library Course',
-    'course': 'Python',
-    'author': 'Omar',
-    'thumbnail': 'thumbnail.jpg'
-},
-{'title': 'Request Library Course',
-    'course': 'Python',
-    'author': 'Omar',
-    'thumbnail': 'thumbnail.jpg'
-},
-{'title': 'Request Library Course',
-    'course': 'Python',
-    'author': 'Omar',
-    'thumbnail': 'thumbnail.jpg'
-},
-{'title': 'Request Library Course',
-    'course': 'Python',
-    'author': 'Omar',
-    'thumbnail': 'thumbnail.jpg'
-},
-]
-
 categories = [
     {
-        'name': 'Electronics',
-        'icon': 'electronic.jpg',
-        'description': 'Top-notch gadgets for all your tech needs.'
+        'name': 'Electronic Devices',
+        'icon': 'devices.jpg',
+        'description': 'Upgrade your computing experience with the latest computer hardware essentials. From powerful processors and graphics cards to high-speed memory modules, find the components you need to enhance your system performance and capabilities'
     },
 
     {
         'name': 'Home & Kitchen',
-        'icon': 'analysis.png',
-        'description': 'Stylish decor and kitchen essentials.'
+        'icon': 'kit.jpg',
+        'description': 'Transform your living space with our diverse collection of home and kitchen essentials. Discover stylish decor, functional appliances, and innovative gadgets that make daily chores a breeze. Elevate your home environment with our curated selection of quality product'
     },
 
     {
-        'name': 'Fashion & Apparel',
-        'icon': 'machine-learning.png',
-        'description': 'Trendy clothing and accessories.'
+        'name': 'Bags',
+        'icon': 'bages.jpg',
+        'description': 'Stay connected and in style with our range of cutting-edge smartphones. Explore the latest models boasting advanced features, stunning cameras, and powerful processors. Find the perfect device to suit your lifestyle and stay ahead in the fast-paced world of mobile technology.'
     },
 
     {
-        'name': 'Health & Beauty',
-        'icon': 'web.png',
-        'description': 'Beauty and wellness products for you.'
+        'name': 'Clothes',
+        'icon': 'clothes.jpg',
+        'description': 'Dive into the world of electronic hardware innovation. Whether you are a DIY enthusiast or a professional, our collection includes a variety of electronic components and tools. From circuit boards to connectors, we have got what you need to bring your electronic projects to life'
     },
 
     {
-        'name': 'Sports & Outdoors',
-        'icon': 'blockchain.png',
-        'description': 'Gear for active lifestyles and adventures.'
+        'name': 'Books',
+        'icon': 'book.jpg',
+        'description': 'Immerse yourself in captivating stories and knowledge with our diverse collection of books. From gripping novels to insightful non-fiction, our library offers a literary journey for every reader. Explore new worlds, gain fresh perspectives, and let the magic of words transport you.'
     },
 
     {
         'name': 'Toys & Games',
-        'icon': 'idea.png',
-        'description': 'Fun and educational toys for all ages.'
+        'icon': 'toys.jpg',
+        'description': 'Spark joy and creativity with our delightful range of toys for all ages. From educational playsets that enhance learning to whimsical toys that inspire imagination, our collection brings smiles to little faces. Discover a world of play where fun meets development, and let the adventure begin with our carefully curated selection of toys'
     },
 
 ]
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', lessons=lessons, categories=categories)
+    return render_template('home.html', categories=categories)
 
 @app.route("/about")
 def about():

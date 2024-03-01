@@ -1,26 +1,59 @@
-body::before {
+body::before{
     display: block;
     content: '';
     height: 60px;
+     background-color: e6f2ff;
+     z-index:-1;
 }
-
+nav::before{
+z-index: -1;
+}
+.container{
+    width:100%; /* Set your desired max-width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    background-color: e6f2ff;
+    height:30%;
+}
+.box-with-centered-border{
+    width: 1000px;
+   border-radius: 40px;
+    background-color: #9ba9ff; /* Set your desired background color */
+    box-shadow: #9ba2ff 0 0 10px rgba(0, 0, 0, 0.5); /* Set your desired box shadow */
+    border: 9px double #ccc; /* Set your desired border style */
+}
 .card {
     transition: 0.7s ease;
     box-shadow: 0 5px 15px rgba(1 1 1/ 15);
-    border-radius: 5px;
-    margin: 5px;
-    background-color: orange;
+    border-radius: 10px;
+    background: linear-gradient(#7364d2,#baebff);
+    justify-content:space-between;
+    display:flex;
 }
+.card-text{
 
+color:black;
+
+}
 .card:hover {
     transform: scale(1.1);
 }
+h3
+{
+    font-size:40px;
+    font-weight:400;
+    box-shadow: inset 0 10px 30px rgba(0.5,1, 0, 0.5);
+    border-radius:40px;
 
+}
 .lesson {
     box-shadow: 0 5px 15px rgba(200 200 200/ 15);
     border-radius: 5px;
     border: 1px solid #fff;
 
+}
+.bold-text {
+    font-weight: bold;
 }
 
 .post:hover {
@@ -54,7 +87,8 @@ body::before {
 }
 
 .arabic-sc {
-    font-family: 'Rakkas', cursive;
+    font-family:article, cursive;
+    font-size:40px;
 }
 
 .content-section {

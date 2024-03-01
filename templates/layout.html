@@ -14,16 +14,16 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
-    <link rel="icon" type="images/x-icon" href="static/logo1.png"/>
+    <link rel="icon" type="images/x-icon" href="static/logostoree.png"/>
 </head>
-
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 bg-light">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top" style="height: 60px;">
         <div class="container">
             <a href="{{ url_for('home')}}" class="navbar-brand">
-                <img src="static/logo1.png" alt=""  style="height: 50px; width: 70px; border-radius: 8px;">
-                <span style="color: orange;">K</span>ol7aga <span style="color:orange;">S</span>tore
+
+                     <img src="static/logostoree.png" alt=""  style="height: 40px; width: auto; border-radius: 8px;">
+<!--                <span style="color: orange;">K</span>ol7aga <span style="color:orange;">S</span>tore-->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,8 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="{{url_for('about')}}" class="nav-link">About Us</a>
+                        <a href="{{url_for('about')}}" class="nav-link ">
+                             <h1>About Us</h1> </a>
                     </li>
                 </ul>
                 <!-- User Links -->
@@ -74,7 +75,7 @@
                 </div>
                 <div class="col-md-12 col-lg-4 pb-2">
                     <h4 class="text-center text-decoration-underline pb-3">Contact Us</h4>
-                    <p class="lead">omar@oghoneim.com</p>
+                    <p class="lead">eissa.mohamed852@gmail.com</p>
                 </div>
             </div>
             <div class="col text-white text-center position-relative">

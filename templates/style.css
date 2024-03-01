@@ -1,258 +1,100 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: Arial, Helvetica, sans-serif;
+body::before{
+    display: block;
+    content: '';
+    height: 60px;
+     background-color: e6f2ff;
+     z-index:-1;
 }
-body{
-    background: white;
-    height: 100vh;
+nav::before{
+z-index: -1;
 }
+.container{
+    width:100%; /* Set your desired max-width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    background-color: e6f2ff;
+    height:30%;
+}
+.box-with-centered-border{
+    width: 1000px;
+   border-radius: 40px;
+    background-color: #9ba9ff; /* Set your desired background color */
+    box-shadow: #9ba2ff 0 0 10px rgba(0, 0, 0, 0.5); /* Set your desired box shadow */
+    border: 9px double #ccc; /* Set your desired border style */
+}
+.card {
+    transition: 0.7s ease;
+    box-shadow: 0 5px 15px rgba(1 1 1/ 15);
+    border-radius: 10px;
+    background: linear-gradient(#7364d2,#baebff);
+    justify-content:space-between;
+    display:flex;
+}
+.card-text{
 
-/* This is for site Name*/
-a.sp{
-    text-decoration: none;
-} 
-h1{
-    margin: 0;
-    font-size: 35px;
+color:black;
+
+}
+.card:hover {
+    transform: scale(1.1);
+}
+h3
+{
+    font-size:40px;
+    font-weight:400;
+    box-shadow: inset 0 10px 30px rgba(0.5,1, 0, 0.5);
+    border-radius:40px;
+
+}
+.lesson {
+    box-shadow: 0 5px 15px rgba(200 200 200/ 15);
+    border-radius: 5px;
+    border: 1px solid #fff;
+
+}
+.bold-text {
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    color: white;
-    padding-right: 20px;
-}
-span {
-    color: #ffd700;
-    font-size: 50px;
 }
 
-header{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-    background-color: #333;
-    padding-left: 40px;
-    color: white;
+.post:hover {
+    /* transform: scale(1.1); */
+    opacity: 0.9;
 }
 
-header ul{
-    flex:2;
-    display: flex;
-    justify-content: space-evenly;
+.button_width {
+    min-width: 120px;
+    max-width: 120px;
 }
 
-/* All This For Dropdown */
-.hed{
-    list-style: none;
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 8px;
 }
-.hed a{
+
+.user-img {
+    height: 150px;
+    width: 150px;
+    margin-right: 8px;
+}
+
+.link {
     text-decoration: none;
-    color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    transition: .3s;
-}
-.hed :hover{
-    color: #ffd700;
-}
-.hedd {
-  margin-top: 10px;
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 25px;
-  border-radius: 18px;
-  box-shadow:10px 10px 10px black;
-}
-.hed:hover .hedd {
-    display: block;
-}
-.hedd a{
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: .3s;
-
-}
-#int{
-    padding: 0px 16px;
-}
-  
-/* For Search Box */
-.search-box {
-  display: flex;
-  align-items: center;
-  width: 150px; /* Adjust the overall width of the search box */
-  position: relative;
-  padding-left: 50px;
-}
-.search-box input {
-  height: 30px;
-  border: none;
-  outline: none;
-  background: white;
-  border-radius: 30px;
-  color: gray;
-  font-size: 16px;
-  text-align: center;
-}
-.search-box button {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  position: absolute;
-  border: none;
-  background: grey;
-  margin-left: -30px; /* Push the button to the right */
-}
-  
-
-/* For Sympols like facebook*/
-i{
-    color: white;
-    cursor: pointer;
-    transition: .3s;
-}
-i:hover{
-    transform: scale(.9);
-    color: blue;
 }
 
-/* All This For Boxs */
-.container {
-    display: flex;
-    padding-top: 10px;
-    height: 500px;
+.nobull {
+    list-style-type: none;
 }
-.container a{
-    text-decoration: none;
-    color: black;
+
+.arabic-sc {
+    font-family:article, cursive;
+    font-size:40px;
 }
-.box {
-    margin-top: 100px;
-    border-radius: 8px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: .3s;
-    border-color: #aaa;
-    border-width: 2px;
-    border-style: solid;
-}
-.box img {
-    width: 100%;
-    height: 300px;
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
     margin-bottom: 20px;
-    border-radius: 6px;
-    border-width: 2px;
-}
-.box img:hover{
-    opacity: .9;
-}
-
-.box h2 {
-    margin-top: 0;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-.box h2:hover{
-    text-decoration: underline;
-}
-
-
-.container2 {
-    display: flex;
-    height: 200px;
-    margin-bottom: 20px;
-}
-.box2 {
-    margin-top: 100px;
-    border-radius: 8px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: .3s;
-    border-color: #aaa;
-    border-width: 2px;
-    border-style: solid;
-    height: 180px;
-}
-.box2 img {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    border-width: 2px;
-}
-.box2 img:hover{
-    opacity: .9;
-}
-
-.box2 h2 {
-    margin-top: 0;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-.box2 h2:hover{
-    text-decoration: underline;
-}
-
-.box3 {
-    margin-top: 100px;
-    border-radius: 8px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: .3s;
-    border-color: #aaa;
-    border-width: 2px;
-    border-style: solid;
-    height: 400px;
-    width: 1000px;
-}
-.box3 img {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-    width: 1000px;
-    border-radius: 6px;
-    border-width: 2px;
-}
-.box3 img:hover{
-    opacity: .9;
-}
-.box3 h2:hover{
-    text-decoration: underline;
-}
-
-
-/* For The Body Of The Page That Contains News */
-.page {
-    margin: auto;
-    background-color: white;
-    width: 85%;
-    box-shadow: 20px 0px 50px rgba(0, 0, 0, 0.1), -20px 0px 50px rgba(0, 0, 0, 0.1);
-}
-
-
-/* For The Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0px;
-    bottom: 0;
-    width: 100%;
-}
-.footer-text {
-    margin: 0;
-    font-size: 14px;
 }
