@@ -37,17 +37,33 @@ categories = [
         'name': 'Toys & Games',
         'icon': 'toys.jpg',
         'description': 'Spark joy and creativity with our delightful range of toys for all ages. From educational playsets that enhance learning to whimsical toys that inspire imagination, our collection brings smiles to little faces. Discover a world of play where fun meets development, and let the adventure begin with our carefully curated selection of toys'
+    }
+
+]
+Founders = [
+    {
+        'name':'Reem Mohsen',
+        'image':'Reem1.jpeg',
     },
 
+    {
+        'name':'Mohamed Eissa',
+        'image':'Mohamed.jpg',
+    },
+
+    {
+        'name':'Mahmod Morad',
+        'image':'mahmod.jpg',
+    }
 ]
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', categories=categories)
+    return render_template('home.html',title = "Home", categories=categories)
 
 @app.route("/about")
 def about():
-    return render_template('about.html', title="About")
+    return render_template('about.html', title="About", founders = Founders)
 
 if __name__=="__main__":
     app.run(debug=True)

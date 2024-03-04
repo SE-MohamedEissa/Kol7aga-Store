@@ -4,18 +4,12 @@
     <div class="page bg-light py-5">
         <div class="container text-center">
             <div class="row">
+                {% for founder in founders %}
                 <div class="col-md-4 mb-4">
-                    <img src="static/Reem1.jpeg" class="img-fluid rounded-circle" alt="Person 1">
-                    <h3>Reem Mohsen</h3>
+                    <img src="{{url_for('static', filename=founder.image)}}" class="img-fluid rounded-circle" alt="Person 1">
+                    <h3>{{founder.name}}</h3>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="static/Mohamed.jpg" class="img-fluid rounded-circle" alt="Person 2">
-                    <h3>Mohamed Eissa</h3>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <img src="static/mahmod.jpg" class="img-fluid rounded-circle" alt="Person 3">
-                    <h3>Mahmod Morad</h3>
-                </div>
+                {%endfor%}
             </div>
         </div>
     </div>
