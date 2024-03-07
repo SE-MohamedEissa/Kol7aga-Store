@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from Form import RegisterForm, LoginForm
+import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] ='4e8e3595fc5ed95b4a9d7160affe958829d6bd2c35deca446d6b5a260c23bff9'
@@ -76,14 +77,15 @@ def register():
     if form.validate_on_submit():
         flash(f"Account created for {form.username.data}", "success")
         return redirect(url_for("home"))
-    return render_template('register.html', title="Register", form=form)
+    return render_template('register.html', title="Register", random = random.random(), form=form)
 
 @app.route("/login",methods=["GET","POST"])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        return redirect(url_for("home"))
-    return render_template('login.html', title="Login", form=form)
+        if((form.email.data == "mohamed@gmail.com" and form.password.data == "Mohamed123!?") or (form.email.data == "mahmod@gmail.com" and form.password.data == "Mahmod123!?") or (form.email.data == "reem@gmail.com" and form.password.data == "Reem123!?")):
+            return redirect(url_for("home"))
+    return render_template('login.html', title="Login", random = random.random(), form=form)
 
 if __name__=="__main__":
     app.run(debug=True)
