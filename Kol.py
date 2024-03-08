@@ -1,10 +1,12 @@
 from flask import Flask, render_template, url_for, flash, redirect
+from flask_sqlalchemy import SQLAlchemy
 from Form import RegisterForm, LoginForm
 import random
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] ='4e8e3595fc5ed95b4a9d7160affe958829d6bd2c35deca446d6b5a260c23bff9'
-
+Kol = Flask(__name__)
+Kol.config['SECRET_KEY'] ='4e8e3595fc5ed95b4a9d7160affe958829d6bd2c35deca446d6b5a260c23bff9'
+Kol.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///kol7aga.db'
+db = SQLAlchemy(Kol)
 
 categories = [
     {
@@ -16,7 +18,7 @@ categories = [
     {
         'name': 'Home & Kitchen',
         'icon': 'kit.jpg',
-        'description': 'Transform your living space with our diverse collection of home and kitchen essentials. Discover stylish decor, functional appliances, and innovative gadgets that make daily chores a breeze. Elevate your home environment with our curated selection of quality product'
+        'description': 'Transform your living space with our diverse collection of home and kitchen essentials. Discover stylish decor, functional Kolliances, and innovative gadgets that make daily chores a breeze. Elevate your home environment with our curated selection of quality product'
     },
 
     {
@@ -62,16 +64,16 @@ Founders = [
 ]
 
 
-@app.route("/")
-@app.route("/home")
+@Kol.route("/")
+@Kol.route("/home")
 def home():
     return render_template('home.html',title = "Home", categories=categories)
 
-@app.route("/about")
+@Kol.route("/about")
 def about():
     return render_template('about.html', title="About", founders = Founders)
 
-@app.route("/register",methods=["GET", "POST"])
+@Kol.route("/register",methods=["GET", "POST"])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
@@ -79,7 +81,7 @@ def register():
         return redirect(url_for("home"))
     return render_template('register.html', title="Register", random = random.random(), form=form)
 
-@app.route("/login",methods=["GET","POST"])
+@Kol.route("/login",methods=["GET","POST"])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -87,5 +89,6 @@ def login():
             return redirect(url_for("home"))
     return render_template('login.html', title="Login", random = random.random(), form=form)
 
+    
 if __name__=="__main__":
-    app.run(debug=True)
+    Kol.run(debug=True)
